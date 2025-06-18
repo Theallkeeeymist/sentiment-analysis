@@ -1,0 +1,12 @@
+Project requirements
+
+1) Data:
+      Scraping through sites using beautifulsoup or selenium
+2) Data Preprocessing(libraries: nltk,re,spacy,emoji):
+	Lowercasing, 
+	punctuation, stopwords,special char removal
+	removal of html tags and emojis
+3) Data Analysis(pandas,matplotlib,seaborn,wordcloud)
+4) Model Selection(VADER(quick PoC), SVM(Traditional ML), BERT(Deep Learning))
+5) Training Data
+	

@@ -1,0 +1,49 @@
+<!--{% load static %}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bulb {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .green {
+            background-color: #28a745; /* Bootstrap green */
+            box-shadow: 0 0 30px 10px rgba(40, 167, 69, 0.6);
+        }
+
+        .red {
+            background-color: #dc3545; /* Bootstrap red */
+            box-shadow: 0 0 30px 10px rgba(220, 53, 69, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2 class="text-center"> Sentiment Analysis</h2>
+    <form method="POST" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <div calss="mb-3">
+            <textarea name="review" class="form-control" rows="4" placeholder="Type your review here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Analyze</button>
+    </form>
+
+    {% if prediction %}
+    <div class="mt-4 text-center">
+        <h4>Prediction: {{ prediction }}</h4>
+        <div class="bulb {% if prediction == 'Positive' %}green
+                    {% else %} red {% endif %}"></div>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
