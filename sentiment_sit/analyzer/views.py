@@ -5,8 +5,8 @@ from .utils import clean_text
 
 # Create your views here.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-vectorizer=joblib.load(r'C:\Users\sudha\PycharmProjects\Sentiment-analysis\vectorizer.pkl')
-model_sentiment=joblib.load(r'C:\Users\sudha\PycharmProjects\Sentiment-analysis\sentiment.pkl')
+vectorizer=joblib.load(r'C:\Users\sudha\PycharmProjects\Sentiment-analysis\sentiment_sit\analyzer\vectorizer.pkl')
+model_sentiment=joblib.load(r'C:\Users\sudha\PycharmProjects\Sentiment-analysis\sentiment_sit\analyzer\sentiment.pkl')
 
 def predict_sentiment(request):
     prediction=None
