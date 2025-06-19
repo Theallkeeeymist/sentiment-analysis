@@ -1,6 +1,9 @@
 import re
+
+import nltk
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 from nltk.stem import WordNetLemmatizer
 
 def clean_text(review):
